@@ -34,7 +34,7 @@ public class MainFragment extends Fragment {
 
         setUpWebViewDefaults(web);
 
-        web.loadUrl("https://reddit.com/");
+        web.loadUrl("http://10.0.2.2:3000/");
 
         return view;
     }
