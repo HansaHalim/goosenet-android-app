@@ -19,6 +19,8 @@ public class MainFragment extends Fragment {
 
     private MainViewModel mViewModel;
     private View view;
+    private static final String DESKTOP_USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36";
+
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -31,10 +33,11 @@ public class MainFragment extends Fragment {
         view = inflater.inflate(R.layout.main_fragment, container, false);
 
         WebView web = (WebView) view.findViewById(R.id.web_view);
+        web.getSettings().setUserAgentString(DESKTOP_USER_AGENT);
 
         setUpWebViewDefaults(web);
 
-        web.loadUrl("http://10.0.2.2:3000/");
+        web.loadUrl("https://3000-dot-8844618-dot-devshell.appspot.com/");
 
         return view;
     }
